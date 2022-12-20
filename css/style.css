@@ -19673,7 +19673,9 @@ html[dir="rtl"]
 }
 
 html[dir="rtl"]
-  [direction="rtl"][data-sidebar-style="compact"]:not([data-layout="horizontal"])
+  [direction="rtl"][data-sidebar-style="compact"]:not(
+    [data-layout="horizontal"]
+  )
   .content-body {
   margin-right: 15rem;
 }
@@ -19761,7 +19763,9 @@ html[dir="rtl"]
 }
 
 html[dir="rtl"]
-  [direction="rtl"][data-sidebar-style="compact"]:not([data-layout="horizontal"])
+  [direction="rtl"][data-sidebar-style="compact"]:not(
+    [data-layout="horizontal"]
+  )
   .footer {
   padding-right: 15rem;
 }
@@ -21459,4 +21463,8 @@ html[dir="rtl"]
   border: 1px solid #ced4da;
   border-radius: 5px;
   max-height: 15px;
+}
+
+#farmList {
+  display: none;
 }
