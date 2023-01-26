@@ -618,9 +618,10 @@
         if (password != confirmPassword) {
           document.getElementById("message").innerHTML =
             "Password Didn't Match !  please make sure that new password and confirm password is matched.";
-          return false;
+          document.getElementById("message").style.display = "block";
+        } else {
+          document.getElementById("message").style.display = "none";
         }
-        return true;
       }
     </script>
   </body>
