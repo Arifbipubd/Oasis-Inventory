@@ -530,12 +530,11 @@
                             type="password"
                             class="form-control input-default"
                             placeholder="Confirm Password"
-                            onchange="validatePassword()"
                           />
                         </div>
                       </div>
                     </div>
-                    <p id="message" class="text-danger text-center"></p>
+                    <p id="message" class="text-center"></p>
                     <div class="d-flex justify-content-center">
                       <button
                         type="button"
@@ -609,17 +608,13 @@
         }
       }
 
-      function validatePassword() {
-        var password = document.getElementById("newPass").value;
-        var confirmPassword = document.getElementById("confirmPass").value;
-        if (password != confirmPassword) {
-          document.getElementById("message").innerHTML =
-            "Password Didn't Match !  please make sure that new password and confirm password is matched.";
-          setTimeout(() => {
-            document.getElementById("message").style.display = "none";
-          }, 2000);
+      $("#newPass, #confirmPass").on("keyup", function () {
+        if ($("#newPass").val() == $("#confirmPass").val()) {
+          $("#message").html("Password Matched").css("color", "green");
+        } else {
+          $("#message").html("Password Not Matching").css("color", "red");
         }
-      }
+      });
     </script>
   </body>
 </html>
